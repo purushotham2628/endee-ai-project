@@ -1,9 +1,15 @@
-# Python
+# Python Cache & Bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Build & Distribution
 build/
 develop-eggs/
 dist/
@@ -30,8 +36,9 @@ ENV/
 env.bak/
 venv.bak/
 .venv
+.virtualenv
 
-# IDE and Editor
+# IDE & Editor
 .vscode/
 .idea/
 *.swp
@@ -43,38 +50,72 @@ venv.bak/
 .settings/
 *.sublime-project
 *.sublime-workspace
+.emacs*
+.netrwhist
+*.sublime-settings
 
 # Environment Variables
 .env
 .env.local
 .env.*.local
 
-# OS
+# OS Files
 .DS_Store
 Thumbs.db
-*.log
+.Spotlight-V100
+.Trashes
+$RECYCLE.BIN/
+ehthumbs.db
 
-# Testing
+# Logs & Output
+*.log
+*.logs
+logs/
+output/
+*.out
+
+# Testing & Coverage
 .pytest_cache/
 .coverage
 htmlcov/
 .tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
 
-# Temporary/Debug Files
+# Temporary & Debug Files
+*.tmp
+*.bak
+*.swp
 debug_search.py
 check_stored_meta.py
 test_meta_fields.py
 check_openai_key.py
+test_*.py
+temp/
+tmp/
 
-# Build artifacts
-*.tar.gz
-*.zip
+# Pip & Poetry
+pip-log.txt
+pip-delete-this-directory.txt
+Pipfile.lock
+poetry.lock
 
-# Node (if used)
-node_modules/
-npm-debug.log
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
 
 # Keep tracked (important project files)
 !requirements.txt
 !vector_metadata.json
 !README.md
+!.gitignore
