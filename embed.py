@@ -1,5 +1,45 @@
 """embed.py
 
+Simple embedding helper using sentence-transformers.
+Model: all-MiniLM-L6-v2 (dimension 384)
+
+Install:
+    pip install sentence-transformers
+"""
+from sentence_transformers import SentenceTransformer
+
+_MODEL_NAME = "all-MiniLM-L6-v2"
+
+print(f"Loading embedding model '{_MODEL_NAME}'...")
+_model = SentenceTransformer(_MODEL_NAME)
+print("Model loaded.")
+
+
+def get_embedding(text: str) -> list:
+    """Return embedding for `text` as a plain Python list of floats.
+
+    Args:
+        text: The input text to embed.
+
+    Returns:
+        List[float]: Embedding vector.
+    """
+    if not text:
+        return []
+
+    vec = _model.encode(text)
+    try:
+        return vec.tolist()
+    except Exception:
+        return [float(x) for x in vec]
+
+
+if __name__ == "__main__":
+    sample = "What is DNS used for?"
+    emb = get_embedding(sample)
+    print(f"Sample embedding length: {len(emb)}")
+"""embed.py
+
 Provides a simple wrapper around sentence-transformers to produce
 embeddings for text. Uses the `all-MiniLM-L6-v2` model which is
 small, fast and suitable for local use.

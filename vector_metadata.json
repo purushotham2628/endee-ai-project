@@ -1,0 +1,14 @@
+{
+  "vec_001": {
+    "text": "A subnet divides a network into smaller, more manageable pieces.",
+    "index": 1
+  },
+  "vec_002": {
+    "text": "TCP provides reliable, ordered, and error-checked delivery of a stream of bytes.",
+    "index": 2
+  },
+  "vec_003": {
+    "text": "DNS translates human-friendly domain names to IP addresses for routing.",
+    "index": 3
+  }
+}
